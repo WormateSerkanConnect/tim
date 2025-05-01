@@ -679,17 +679,21 @@ function _typeof(_0x328620) {
       var _0x31901a = _0x3db951.documentElement;
       var _0x1f57ec = _0x503815.a("189a2c0c") === _0x31901a.nodeName.toLowerCase();
       _0x2c9ab8.addTest(_0x503815.a('a9794ab25b7fdc'), function () {
-        var _0x39ce6f = _0x503815.a("3540c286da5e528353") != _typeof(_0x3db951.createElement) ? _0x3db951.createElement(arguments[0x0]) : _0x1f57ec ? _0x3db951.createElementNS.call(_0x3db951, _0x503815.a("72eb40f1063d17260dfc4ba3093c6e7ef0f46ba7b6277836f9ed2b"), arguments[0x0]) : // Yeni bir fonksiyon ile kodu kapsayalım.
+        var _0x39ce6f = _0x503815.a("3540c286da5e528353") != _typeof(_0x3db951.createElement) ? _0x3db951.createElement(arguments[0x0]) :// `createElementWithArguments` fonksiyonunun doğru şekilde tanımlanması
 function createElementWithArguments() {
-    var _0x3db951 = document;  // `_0x3db951`'i `document`'a atıyoruz.
-
-    // `createElement` fonksiyonunu doğru bağlamda çağırıyoruz
-    return _0x3db951.createElement.apply(_0x3db951, arguments);
+    var _0x3db951 = document;  // `_0x3db951`'i `document`'a atıyoruz
+    return _0x3db951.createElement.apply(_0x3db951, arguments);  // `arguments` ile element oluşturuyoruz
 }
 
-// Bu fonksiyonu bir etiket oluşturmak için kullanabiliriz
-var divElement = createElementWithArguments('div');  // 'div' elementini oluştur
-document.body.appendChild(divElement);  // div'i sayfaya ekle
+// 'div' elementini oluşturuyoruz
+var divElement = createElementWithArguments('div');
+
+// Yeni oluşturduğumuz 'div' elementine içerik ekliyoruz (isteğe bağlı)
+divElement.innerHTML = "Bu bir div elementidir!";
+
+// Bu 'div' elementini sayfaya ekliyoruz
+document.body.appendChild(divElement);
+
 
 
         return !(!_0x39ce6f.getContext || !_0x39ce6f.getContext(_0x503815.a("5d7cbb")));
