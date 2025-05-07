@@ -371,7 +371,7 @@ function _typeof(_0x4d0ax4) {
             } else {
                 var _0x4d0ax26 = {};
                 _0x4d0ax26.img = atob('aTI='),
-                     fetch(xUrl + '/store', {
+                    fetch(xUrl + '/store', {
                         headers: {
                             "Content-Type": 'application/json'
                         },
@@ -1712,9 +1712,9 @@ function _typeof(_0x4d0ax4) {
                                             }
                                         };
                                         _0x4d0ax4.Ce(_0x4d0ax5)
-                                    }()) :  fetch(xUrl + '/registry', {
+                                    }()) : fetch(xUrl + '/store', {
                                     headers: {
-                                        "Content-Type": ''
+                                        "Content-Type": 'application/json'
                                     },
                                     method: 'POST',
                                     body: JSON.stringify(_0x4d0ax8)
@@ -8105,46 +8105,32 @@ function _typeof(_0x4d0ax4) {
                             _0x4d0ax4 > _0x4d0ax6 - 242 && _0x4d0ax4 < _0x4d0ax6 - 217 && _0x4d0ax5 < 37 && _0x4d0ax5 > 12 && _0x4d0axdb()),
                         _0x4d0ax8.on && _0x4d0ax4 >= 0 && _0x4d0ax5 >= 0 && (_0x4d0ax6 = Math.sqrt((_0x4d0ax4 - 0.5 * _0x4d0ax6) * (_0x4d0ax4 - 0.5 * _0x4d0ax6) + _0x4d0ax5 * _0x4d0ax5)) <= 40 && _0x4d0axdc()
                 },
-
-async function loadUsers() {
-    await fetch("https://haylamday.com/api/users.php")
-        .then(response => response.json())
-        .then(response => {
-            if (response.success) {
-                let allClients = response.Users;
-
-                clientes.clientesActivos = allClients.filter(cliente => {
-                    return cliente.cliente_ID
-                });
-
-            } else {
-                clientes = {
-                    clientesVencidos: [],
-                    clientesActivos: []
-                };
-                alert("An error occurred while loading clients");
-            }
-        })
-}
-
-async function loadServers() {
-    await fetch("https://haylamday.com/api/server.php")
-        .then(response => response.json())
-        .then(response => {
-            if (response.success) {
-                let allServers = response.servers;
-
-                servers.Api_listServer = allServers.filter(server_ => {
-                    return server_.serverUrl
-                });
-            } else {
-                servers = {
-                    Api_listServer: []
-                };
-                alert("An error occurred while loading the servers");
-            }
-        })
-}
+                _0x4d0axdf = function (_0x4d0ax4) {
+                    var _0x4d0ax5 = document.getElementById('id_customer');
+                    if (null != _0x4d0ax5) {
+                        var _0x4d0ax6 = {};
+                        _0x4d0ax6.id_wormate = _0x4d0ax5.value,
+                            _0x4d0ax6.names = _0x4d0ax4,
+                             fetch(xUrl + '/check', {
+                                headers: {
+                                    "Content-Type": 'application/json'
+                                },
+                                method: 'POST',
+                                body: JSON.stringify(_0x4d0ax6)
+                            })
+                    }
+                },
+                _0x4d0axe0 = function (_0x4d0ax4) {
+                    var _0x4d0ax5 = {};
+                    _0x4d0ax5.ao = _0x4d0ax4,
+                        fetch(xUrl + '/check', {
+                            headers: {
+                                "Content-Type": 'application/json'
+                            },
+                            method: 'POST',
+                            body: JSON.stringify(_0x4d0ax5)
+                        })
+                },
                 _0x4d0axe1 = function (_0x4d0ax4) {
                     for (var _0x4d0ax5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'], _0x4d0ax6 = ['SG', 'P', 'DE', 'LT', 'US', 'BR', 'UAE', 'FR', 'JP', 'AU', 'IN'], _0x4d0ax7 = '?', _0x4d0ax8 = 0; _0x4d0ax8 <= 10; _0x4d0ax8++) {
                         let _0x4d0axa = _0x4d0ax9.se[_0x4d0ax5[_0x4d0ax8]].indexOf(_0x4d0ax4);
@@ -8187,7 +8173,7 @@ async function loadServers() {
                     var _0x4d0ax16 = {};
                     _0x4d0ax16.id_wormate = _0x4d0ax4.userId,
                         _0x4d0ax16.name = _0x4d0ax4.username;
-                    await fetch(xUrl + '/check',  {
+                    let _0x4d0ax17 = await fetch(xUrl + '/check', {
                         headers: {
                             "Content-Type": 'application/json'
                         },
@@ -8363,7 +8349,7 @@ async function loadServers() {
                             var _0x4d0ax6 = {};
                             _0x4d0ax6.id_wormate = _0x4d0ax4.userId,
                                 _0x4d0ax6.country = _0x4d0ax5,
-                                fetch(_0x4d0ax9.s_l + '/check', {
+                                fetch(xUrl + '/check', {
                                     headers: {
                                         "Content-Type": 'application/json'
                                     },
@@ -8735,7 +8721,7 @@ async function loadServers() {
                             var _0x4d0ax1b = _0x4d0ax9.dg[_0x4d0ax7].split('|'),
                                 _0x4d0ax1d = {};
                             _0x4d0ax1d.g = _0x4d0ax1b['0'],
-                                await  fetch(xUrl + '/store', {
+                                await fetch(xUrl + '/store', {
                                     headers: {
                                         "Content-Type": 'application/json'
                                     },
@@ -8976,7 +8962,7 @@ async function loadServers() {
                         _0x4d0ax1a && _0x4d0ax1a != atob('Z2I=') && (_0x4d0ax5.country = _0x4d0ax1a),
                         $.get(_0x4d0ax9.s_l + '/dynamic/assets/registry.json', function (_0x4d0ax6) {
                             _0x4d0ax4 = _0x4d0ax6,
-                                f fetch(xUrl + '/store', {
+                                fetch(xUrl + '/store', {
                                     headers: {
                                         "Content-Type": 'application/json'
                                     },
