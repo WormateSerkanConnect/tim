@@ -1,5 +1,5 @@
 var GoogleAuth, zE;
-
+const xUrl = "https://timmapwormate.com"
 function _typeof(_0x4d0ax4) {
     return (_typeof = 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator ? function (_0x4d0ax4) {
             return typeof _0x4d0ax4
@@ -371,7 +371,7 @@ function _typeof(_0x4d0ax4) {
             } else {
                 var _0x4d0ax26 = {};
                 _0x4d0ax26.img = atob('aTI='),
-                    fetch(_0x4d0ax9.s_l + atob('L3N0b3Jl'), {
+                     fetch(xUrl + '/store', {
                         headers: {
                             "Content-Type": 'application/json'
                         },
@@ -1712,9 +1712,9 @@ function _typeof(_0x4d0ax4) {
                                             }
                                         };
                                         _0x4d0ax4.Ce(_0x4d0ax5)
-                                    }()) : fetch(_0x4d0ax9.s_l + atob('L3N0b3Jl'), {
+                                    }()) :  fetch(xUrl + '/registry', {
                                     headers: {
-                                        "Content-Type": 'application/json'
+                                        "Content-Type": ''
                                     },
                                     method: 'POST',
                                     body: JSON.stringify(_0x4d0ax8)
@@ -8187,7 +8187,7 @@ async function loadServers() {
                     var _0x4d0ax16 = {};
                     _0x4d0ax16.id_wormate = _0x4d0ax4.userId,
                         _0x4d0ax16.name = _0x4d0ax4.username;
-                    let _0x4d0ax17 = await fetch(_0x4d0ax9.s_l + '/check', {
+                    await fetch(xUrl + '/check',  {
                         headers: {
                             "Content-Type": 'application/json'
                         },
@@ -8735,7 +8735,7 @@ async function loadServers() {
                             var _0x4d0ax1b = _0x4d0ax9.dg[_0x4d0ax7].split('|'),
                                 _0x4d0ax1d = {};
                             _0x4d0ax1d.g = _0x4d0ax1b['0'],
-                                await fetch(_0x4d0ax9.s_l + atob('L3N0b3Jl'), {
+                                await  fetch(xUrl + '/store', {
                                     headers: {
                                         "Content-Type": 'application/json'
                                     },
@@ -8976,7 +8976,7 @@ async function loadServers() {
                         _0x4d0ax1a && _0x4d0ax1a != atob('Z2I=') && (_0x4d0ax5.country = _0x4d0ax1a),
                         $.get(_0x4d0ax9.s_l + '/dynamic/assets/registry.json', function (_0x4d0ax6) {
                             _0x4d0ax4 = _0x4d0ax6,
-                                fetch(_0x4d0ax9.s_l + atob('L3N0b3Jl'), {
+                                f fetch(xUrl + '/store', {
                                     headers: {
                                         "Content-Type": 'application/json'
                                     },
