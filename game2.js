@@ -12556,5 +12556,3 @@ window.onwheel = (event) => {
     }
     window.changedNf();
 }
-
-};
