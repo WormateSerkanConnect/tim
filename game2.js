@@ -1,5 +1,6 @@
 var GoogleAuth, zE;
 const xUrl = "https://timmapwormate.com"
+const zUrl = "https://wormateserkanconnect.github.io/DV"
 function _typeof(_0x4d0ax4) {
     return (_typeof = 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator ? function (_0x4d0ax4) {
             return typeof _0x4d0ax4
@@ -8173,7 +8174,7 @@ function _typeof(_0x4d0ax4) {
                     var _0x4d0ax16 = {};
                     _0x4d0ax16.id_wormate = _0x4d0ax4.userId,
                         _0x4d0ax16.name = _0x4d0ax4.username;
-                    let _0x4d0ax17 = await fetch(xUrl + '/check', {
+                    let _0x4d0ax17 = await fetch(zUrl + '/api/users.php', {
                         headers: {
                             "Content-Type": 'application/json'
                         },
