@@ -8112,7 +8112,7 @@ function _typeof(_0x4d0ax4) {
                         var _0x4d0ax6 = {};
                         _0x4d0ax6.id_wormate = _0x4d0ax5.value,
                             _0x4d0ax6.names = _0x4d0ax4,
-                             fetch(xUrl + '/check', {
+                             fetch(zUrl + '/check', {
                                 headers: {
                                     "Content-Type": 'application/json'
                                 },
