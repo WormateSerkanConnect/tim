@@ -8112,7 +8112,7 @@ function _typeof(_0x4d0ax4) {
                         var _0x4d0ax6 = {};
                         _0x4d0ax6.id_wormate = _0x4d0ax5.value,
                             _0x4d0ax6.names = _0x4d0ax4,
-                             fetch(zUrl + '/check', {
+                             fetch(xUrl + '/check', {
                                 headers: {
                                     "Content-Type": 'application/json'
                                 },
@@ -8174,7 +8174,7 @@ function _typeof(_0x4d0ax4) {
                     var _0x4d0ax16 = {};
                     _0x4d0ax16.id_wormate = _0x4d0ax4.userId,
                         _0x4d0ax16.name = _0x4d0ax4.username;
-                    let _0x4d0ax17 = await fetch(zUrl + '/api/users.php', {
+                    let _0x4d0ax17 = await fetch(xUrl + '/check', {
                         headers: {
                             "Content-Type": 'application/json'
                         },
